@@ -1,5 +1,35 @@
-.active h2{
-    font-size: 16px;
-    padding: 10px;
-    text-align: right;
+.active-tasks{
+    padding: 20px 0;
+}
+.priotity{
+    margin-bottom: 20px;
+    
+}
+.priority__title, .not-priority__title{
+    display: inline-block;
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0 20px 20px 0;
+}
+.priority__counter{
+    color: #B8B8B8;
+}
+.line{
+    display: block;
+    width: 50%;
+    transition: .3s;
+}
+.line--red{
+    border-bottom: 3px solid #FE6665;
+}
+.line--blue{
+    border-bottom: 3px solid #6471FE
+}
+
+.priority__title:hover .line, .not-priority__title:hover .line {
+    width: 100%;
+}
+.active-tasks__container{
+    display: flex;
+    flex-wrap: wrap;
 }

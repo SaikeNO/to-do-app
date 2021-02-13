@@ -8,6 +8,7 @@ import { Switch, Route } from 'react-router-dom';
 
 
 import '../styles/App.css';
+import calendar from '../calendar.svg'
 
 class App extends Component {
 
@@ -15,7 +16,7 @@ class App extends Component {
     tasks: [
       {
         id: 0,
-        text: 'zagrać w Wiedźmina 3',
+        text: 'zagrać w Wiedźmina',
         date: '2021-02-15',
         important: true,
         active: true,
@@ -103,8 +104,14 @@ class App extends Component {
     return (
       <Router>
         <div className="App">
-          <h1>Good morning Mateusz</h1>
+          <header>
+            <div className='welcome'>
+              <h1>Good morning Mateusz</h1>
+              <img src={calendar} alt="calendar" />
+            </div>
 
+            <h2> {this.state.tasks.length} tasks to do </h2>
+          </header>
           <Switch>
             <Route path={'/tasks'} render={() => <TaskList tasks={this.state.tasks} delete={this.deleteTask} change={this.changeTaskStatus} />} />
             <Route path={'/add'} render={() => <AddTask add={this.addTask} />} />

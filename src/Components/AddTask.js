@@ -48,14 +48,35 @@ class AddTask extends Component {
         maxDate = `${maxDate}-12-31`
         return (
             <div className='form'>
-                <input type="text" placeholder='dodaj zadanie' value={this.state.text} onChange={this.handleText} />
-                <input type="checkbox" checked={this.state.checked} id="important" onChange={this.handleCheckbox} />
-                <label htmlFor="important">Priorytet</label>
-                <br />
-                <label htmlFor="date">Do kiedy zrobić</label>
-                <input type="date" id="date" value={this.state.date} min={this.minDate} max={maxDate} onChange={this.handleDate} />
-                <br />
-                <button onClick={this.handleClick}>Dodaj</button>
+                <label htmlFor="add">Add task</label>
+                <input
+                    type="text"
+                    placeholder='add task'
+                    value={this.state.text}
+                    id='add'
+                    onChange={this.handleText}
+                />
+                <div className="priority-checkbox">
+                    <input
+                        type="checkbox"
+                        checked={this.state.checked}
+                        id="important"
+                        onChange={this.handleCheckbox}
+                    />
+                    <label htmlFor="important">Priority</label>
+                </div>
+                <div className="date">
+                    <label htmlFor="date">Choose when to do</label>
+                    <input
+                        type="date"
+                        id="date"
+                        value={this.state.date}
+                        min={this.minDate}
+                        max={maxDate}
+                        onChange={this.handleDate}
+                    />
+                </div>
+                <button onClick={this.handleClick}>Confirm</button>
             </div>
         );
     }

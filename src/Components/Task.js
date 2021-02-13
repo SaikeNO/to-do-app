@@ -1,35 +1,32 @@
+import "../styles/Task.css";
 const Task = props => {
-    const style = {
-        color: 'red'
-    }
-    
-    const {text, date, id, active,important, finishDate} = props.task
 
-    
+    const { text, date, id, active, finishDate } = props.task
 
-    if(active){
-        return ( 
-            <div>
-                <p>
-                    <strong style={important ? style : null}>{text}</strong>- do <span>{date} </span>
-                    <button onClick={()=>props.change(id)}>Zostało wykonane</button>
-                    <button onClick={()=>props.delete(id)}>X</button>
-                </p>
+    if (active) {
+        return (
+            <div className='task'>
+                <h3 className="task__title">{text}</h3>
+                <p className="task__date">{date} </p>
+                <div className="task__btns">
+                    <button onClick={() => props.change(id)}> <span className="fas fa-check-circle"></span> <span>Done</span></button>
+                    <button onClick={() => props.delete(id)}> <span className="fas fa-times"></span> <span>Delete</span> </button>
+                </div>
+
             </div>
         );
-    } else{
+    } else {
         const finish = new Date(finishDate).toLocaleString()
-        return(
-            <div>
-                <p>
-                    <strong >{text}</strong><em> (zrobić do {date})</em>
-                    <br/> 
+        return (
+            <div className='task'>
+                <h3 className="task__title" >{text}</h3>
+                <em> (zrobić do {date})</em>
+                <br />
                     -potwierdzenie wykonania <span>{finish}</span>
-                    <button onClick={()=>props.delete(id)}>X</button>
-                </p>
+                <button onClick={() => props.delete(id)}>X</button>
             </div>
         )
     }
 }
- 
+
 export default Task;
