@@ -1,7 +1,13 @@
-import './App.css';
 import AddTask from './AddTask'
 import TaskList from './TaskList'
+import Navigation from './Navigation'
+
 import { Component } from 'react';
+import { BrowserRouter as Router } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
+
+
+import '../styles/App.css';
 
 class App extends Component {
 
@@ -39,10 +45,16 @@ class App extends Component {
         active: true,
         finishDate: null
       },
-    ]
+    ],
+    isActive: {
+      tasks: false,
+      add: false,
+      done: false,
+    }
+
   }
 
-  counter = this.state.tasks.length 
+  counter = this.state.tasks.length
 
   deleteTask = (id) => {
     const tasks = [...this.state.tasks]
@@ -55,8 +67,8 @@ class App extends Component {
 
   changeTaskStatus = (id) => {
     const tasks = [...this.state.tasks]
-    tasks.forEach(task =>{
-      if (task.id === id){
+    tasks.forEach(task => {
+      if (task.id === id) {
         task.active = false;
         task.finishDate = new Date().getTime()
       }
@@ -64,18 +76,18 @@ class App extends Component {
     this.setState({
       tasks
     })
-    
+
   }
 
-  addTask = (text,date,important) =>{
+  addTask = (text, date, important) => {
     console.log('dodaj')
     const task = {
-        id: this.counter,
-        text,
-        date,
-        important,
-        active: true,
-        finishDate: null
+      id: this.counter,
+      text,
+      date,
+      important,
+      active: true,
+      finishDate: null
     }
     this.counter++;
 
@@ -87,16 +99,22 @@ class App extends Component {
     return true
   }
 
-  render(){
+  render() {
     return (
-    <div className="App">
-      <h1>TO DO APP</h1>
-      <AddTask add={this.addTask}/>
-      <TaskList tasks={this.state.tasks} delete={this.deleteTask} change={this.changeTaskStatus}/>
-    </div>
-  );
+      <Router>
+        <div className="App">
+          <h1>Good morning Mateusz</h1>
+
+          <Switch>
+            <Route path={'/tasks'} render={() => <TaskList tasks={this.state.tasks} delete={this.deleteTask} change={this.changeTaskStatus} />} />
+            <Route path={'/add'} render={() => <AddTask add={this.addTask} />} />
+          </Switch>
+          <Navigation isActive={this.state.isActive} />
+        </div>
+      </Router>
+    );
   }
-  
+
 }
 
 export default App;

@@ -1,0 +1,81 @@
+.bottom-panel{
+    position: fixed;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 70px;
+    padding: 0 20px;
+    background-color: var(--blue-color)
+}
+
+.bottom-panel a{
+    background-color: transparent;
+    border: none;
+    width: 36px;
+    height: 36px;
+    transition: .2s;
+}
+
+.bottom-panel .tasks{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    width: 40px;
+    height: 40px;
+}
+
+.bottom-panel .tasks span{
+    height: 14px;
+    width: 14px;
+    border-radius: 4px;
+    background-color: var(--dark--blue-color);
+}
+.bottom-panel .add-task{
+    position: relative;
+    background-color: var(--dark--blue-color);
+    border-radius: 10px;
+}
+.add-task span{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    height: 3px;
+    width: 45%;
+    border-radius: 10px;
+    background-color: var(--blue-color);
+}
+.add-task span:nth-of-type(2){
+    transform: translate(-50%,-50%) rotate(90deg);
+}
+.bottom-panel .done-tasks{
+    position: relative;
+    background-color: var(--dark--blue-color);
+    border-radius: 50%;
+}
+
+.bottom-panel .done-tasks::after{
+    content: '';
+    position: absolute;
+    right: -5px;
+    top: -5px;
+    height: 20px;
+    width: 20px;
+    background-color: #544F81;
+    border-bottom: 4px solid var(--blue-color);
+    border-left: 4px solid var(--blue-color);
+    border-radius: 0 150% 0 8px;
+}
+
+.bottom-panel .tasks.active{
+    background-color: transparent
+}
+.bottom-panel .active, 
+.bottom-panel .active::after, 
+.bottom-panel .tasks.active span {
+    background-color: #fff;
+}

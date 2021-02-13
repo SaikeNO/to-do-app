@@ -1,11 +1,10 @@
-import React, {Component} from 'react';
-import "./AddTask.css";
+import React, { Component } from 'react';
+import "../styles/AddTask.css";
 
 class AddTask extends Component {
 
-    minDate = new Date().toISOString().slice(0,10);
-
-    state = { 
+    minDate = new Date().toISOString().slice(0, 10);
+    state = {
         text: '',
         checked: false,
         date: this.minDate
@@ -24,17 +23,17 @@ class AddTask extends Component {
         })
     }
 
-    handleDate = e =>{
+    handleDate = e => {
         this.setState({
             date: e.target.value
         })
     }
 
     handleClick = () => {
-        const {text,checked,date} = this.state;
-        if(text.length < 2) return
-        const add = this.props.add(text,date,checked)
-        if(add){
+        const { text, checked, date } = this.state;
+        if (text.length < 2) return
+        const add = this.props.add(text, date, checked)
+        if (add) {
             this.setState({
                 text: '',
                 checked: false,
@@ -43,24 +42,23 @@ class AddTask extends Component {
         }
     }
 
-    render() { 
+    render() {
 
-        let maxDate = this.minDate.slice(0,4) * 1 + 1
+        let maxDate = this.minDate.slice(0, 4) * 1 + 1
         maxDate = `${maxDate}-12-31`
-
-        return ( 
+        return (
             <div className='form'>
-                <input type="text" placeholder='dodaj zadanie' value={this.state.text} onChange={this.handleText}/>
-                <input type="checkbox" checked={this.state.checked} id="important" onChange={this.handleCheckbox}/>
+                <input type="text" placeholder='dodaj zadanie' value={this.state.text} onChange={this.handleText} />
+                <input type="checkbox" checked={this.state.checked} id="important" onChange={this.handleCheckbox} />
                 <label htmlFor="important">Priorytet</label>
-                <br/>
+                <br />
                 <label htmlFor="date">Do kiedy zrobić</label>
-                <input type="date" id="date" value={this.state.date} min={this.minDate} max={maxDate} onChange={this.handleDate}/>
-                <br/>
+                <input type="date" id="date" value={this.state.date} min={this.minDate} max={maxDate} onChange={this.handleDate} />
+                <br />
                 <button onClick={this.handleClick}>Dodaj</button>
             </div>
-         );
+        );
     }
 }
- 
+
 export default AddTask;
