@@ -3,20 +3,20 @@ import { NavLink } from 'react-router-dom';
 import '../styles/Navigation.css'
 
 const BottomPanel = ({ isActive }) => {
-    const taskClassName = isActive.tasks ? 'tasks active' : 'tasks'
-    const addTaskClassName = isActive.add ? 'add-task active' : 'add-task'
-    const doneTasksClassName = isActive.done ? 'done-tasks active' : 'done-tasks'
+    // const taskClassName = isActive.tasks ? 'tasks active' : 'tasks'
+    // const addTaskClassName = isActive.add ? 'add-task active' : 'add-task'
+    // const doneTasksClassName = isActive.done ? 'done-tasks active' : 'done-tasks'
     return (
-        <div className="bottom-panel ">
-            <NavLink className={taskClassName} to={'/tasks'}>
+        <nav className="bottom-panel ">
+            <NavLink className='tasks' to={'/tasks'}>
                 <span></span><span></span><span></span><span></span>
             </NavLink>
-            <NavLink className={addTaskClassName} to={'/add'}>
+            <NavLink className='add-task' to={'/add'}>
                 <span></span><span></span>
             </NavLink>
-            <NavLink className={doneTasksClassName} to={'/done'}>
+            <NavLink className='done-tasks' to={'/done'}>
             </NavLink >
-        </div>
+        </nav>
     );
 }
 

@@ -32,11 +32,11 @@
     height: 14px;
     width: 14px;
     border-radius: 4px;
-    background-color: var(--dark--blue-color);
+    background-color: var(--dark-blue-color);
 }
 .bottom-panel .add-task{
     position: relative;
-    background-color: var(--dark--blue-color);
+    background-color: var(--dark-blue-color);
     border-radius: 10px;
 }
 .add-task span{
@@ -54,7 +54,7 @@
 }
 .bottom-panel .done-tasks{
     position: relative;
-    background-color: var(--dark--blue-color);
+    background-color: var(--dark-blue-color);
     border-radius: 50%;
 }
 

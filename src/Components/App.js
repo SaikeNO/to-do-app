@@ -47,12 +47,6 @@ class App extends Component {
         finishDate: null
       },
     ],
-    isActive: {
-      tasks: false,
-      add: false,
-      done: false,
-    }
-
   }
 
   counter = this.state.tasks.length

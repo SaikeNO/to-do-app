@@ -1,15 +1,17 @@
-import React, { Component } from 'react';
+import React, { Component, useState } from 'react';
 import "../styles/AddTask.css";
 
 class AddTask extends Component {
 
-    minDate = new Date().toISOString().slice(0, 10);
+
+
     state = {
         text: '',
         checked: false,
         date: this.minDate
     }
 
+    minDate = new Date().toISOString().slice(0, 10);
 
     handleText = e => {
         this.setState({
