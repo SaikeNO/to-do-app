@@ -1,87 +1,71 @@
-import React, { Component, useState } from 'react';
+import React, { useState } from 'react';
 import "../styles/AddTask.css";
 
-class AddTask extends Component {
+const AddTask = props => {
+
+    const minDate = new Date().toISOString().slice(0, 10);
+
+    const [text, setText] = useState('');
+    const [priorityChecked, setPriorityCheked] = useState(false);
+    const [date, setDate] = useState(minDate);
 
 
-
-    state = {
-        text: '',
-        checked: false,
-        date: this.minDate
+    const handleText = e => {
+        setText(e.target.value)
     }
 
-    minDate = new Date().toISOString().slice(0, 10);
-
-    handleText = e => {
-        this.setState({
-            text: e.target.value
-        })
+    const handleCheckbox = e => {
+        setPriorityCheked(e.target.checked)
     }
 
-    handleCheckbox = e => {
-        this.setState({
-            checked: e.target.checked
-        })
+    const handleDate = e => {
+        setDate(e.target.value)
     }
 
-    handleDate = e => {
-        this.setState({
-            date: e.target.value
-        })
-    }
-
-    handleClick = () => {
-        const { text, checked, date } = this.state;
+    const handleClick = () => {
         if (text.length < 2) return
-        const add = this.props.add(text, date, checked)
+        const add = props.add(text, date, priorityChecked)
         if (add) {
-            this.setState({
-                text: '',
-                checked: false,
-                date: this.minDate,
-            })
+            setText('')
+            setPriorityCheked(false)
+            setDate(minDate)
         }
     }
-
-    render() {
-
-        let maxDate = this.minDate.slice(0, 4) * 1 + 1
-        maxDate = `${maxDate}-12-31`
-        return (
-            <div className='form'>
-                <label htmlFor="add">Add task</label>
+    let maxDate = minDate.slice(0, 4) * 1 + 1
+    maxDate = `${maxDate}-12-31`
+    return (
+        <div className='form'>
+            <label htmlFor="add">Add task</label>
+            <input
+                type="text"
+                placeholder='add task'
+                value={text}
+                id='add'
+                onChange={handleText}
+            />
+            <div className="priority-checkbox">
                 <input
-                    type="text"
-                    placeholder='add task'
-                    value={this.state.text}
-                    id='add'
-                    onChange={this.handleText}
+                    type="checkbox"
+                    checked={priorityChecked}
+                    id="important"
+                    onChange={handleCheckbox}
                 />
-                <div className="priority-checkbox">
-                    <input
-                        type="checkbox"
-                        checked={this.state.checked}
-                        id="important"
-                        onChange={this.handleCheckbox}
-                    />
-                    <label htmlFor="important">Priority</label>
-                </div>
-                <div className="date">
-                    <label htmlFor="date">Choose when to do</label>
-                    <input
-                        type="date"
-                        id="date"
-                        value={this.state.date}
-                        min={this.minDate}
-                        max={maxDate}
-                        onChange={this.handleDate}
-                    />
-                </div>
-                <button onClick={this.handleClick}>Confirm</button>
+                <label htmlFor="important">Priority</label>
             </div>
-        );
-    }
+            <div className="date">
+                <label htmlFor="date">Choose when to do</label>
+                <input
+                    type="date"
+                    id="date"
+                    value={date}
+                    min={minDate}
+                    max={maxDate}
+                    onChange={handleDate}
+                />
+            </div>
+            <button onClick={handleClick}>Confirm</button>
+        </div>
+    );
 }
 
 export default AddTask;

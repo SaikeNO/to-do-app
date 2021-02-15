@@ -75,7 +75,6 @@ class App extends Component {
   }
 
   addTask = (text, date, important) => {
-    console.log('dodaj')
     const task = {
       id: this.counter,
       text,
