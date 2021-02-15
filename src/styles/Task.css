@@ -25,7 +25,7 @@
     margin: 10px 0;
     border: none;
 }
-.task__btns button .fas{
+button .fas{
     margin-right: 4px;
 }
 .fa-check-circle{

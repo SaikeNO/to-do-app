@@ -12,7 +12,6 @@ const Task = props => {
                     <button onClick={() => props.change(id)}> <span className="fas fa-check-circle"></span> <span>Done</span></button>
                     <button onClick={() => props.delete(id)}> <span className="fas fa-times"></span> <span>Delete</span> </button>
                 </div>
-
             </div>
         );
     } else {
@@ -23,7 +22,7 @@ const Task = props => {
                 <em> (zrobić do {date})</em>
                 <br />
                     -potwierdzenie wykonania <span>{finish}</span>
-                <button onClick={() => props.delete(id)}>X</button>
+                <button onClick={() => props.delete(id)}> <span className="fas fa-times"></span> <span>Delete</span> </button>
             </div>
         )
     }
