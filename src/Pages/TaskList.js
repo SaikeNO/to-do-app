@@ -1,4 +1,4 @@
-import Task from './Task';
+import Task from '../Components/Task';
 import '../styles/TaskList.css'
 
 const TaskList = props => {
@@ -35,7 +35,6 @@ const TaskList = props => {
 
     const activePriorityTasks = priorityTasks.map(task => <Task key={task.id} task={task} delete={props.delete} change={props.change} />)
     const activeNotPriorityTasks = notPriorityTasks.map(task => <Task key={task.id} task={task} delete={props.delete} change={props.change} />)
-    // const doneTasks = done.map(task => <Task key={task.id} task={task} delete={props.delete} change={props.change} />)
     return (
         <div>
             <div className="active-tasks">

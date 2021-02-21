@@ -1,6 +1,10 @@
-import AddTask from './AddTask'
-import TaskList from './TaskList'
+import AddTask from '../Pages/AddTask'
+import TaskList from '../Pages/TaskList'
+import DoneTasks from '../Pages/DoneTasks'
 import Navigation from './Navigation'
+import Header from './Header'
+import Welcome from '../Pages/Welcome'
+import ErrorPage from '../Pages/ErrorPage'
 
 import { useState } from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
@@ -83,25 +87,23 @@ const App = () => {
 
     return true
   }
-  const activeTasks = tasks.filter(task => task.active);
-  return (
-    <Router>
-      <div className="App">
-        <header>
-          <div className='welcome'>
-            <h1>Good morning Mateusz</h1>
-            <img src={calendar} alt="calendar" />
-          </div>
 
-          <h2> {activeTasks.length} tasks to do </h2>
-        </header>
+  const doneTasks = tasks.filter(task => !task.active);
+
+  return (
+    <div className="App">
+      <Header calendar={calendar} tasks={tasks} />
+      <Router>
         <Switch>
+          <Route path={'/'} exact component={Welcome} />
           <Route path={'/tasks'} render={() => <TaskList tasks={tasks} delete={deleteTask} change={changeTaskStatus} />} />
           <Route path={'/add'} render={() => <AddTask add={addTask} />} />
+          <Route path={'/done'} render={() => <DoneTasks doneTasks={doneTasks} delete={deleteTask} />} />
+          <Route path={''} component={ErrorPage} />
         </Switch>
         <Navigation />
-      </div>
-    </Router>
+      </Router>
+    </div>
   );
 }
 

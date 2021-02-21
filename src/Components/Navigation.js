@@ -8,7 +8,7 @@ const BottomPanel = () => {
     // const doneTasksClassName = isActive.done ? 'done-tasks active' : 'done-tasks'
 
     return (
-        <nav className="bottom-panel ">
+        <nav className="navigation ">
             <NavLink className='tasks' to={'/tasks'}>
                 <span></span><span></span><span></span><span></span>
             </NavLink>

@@ -19,10 +19,15 @@ const Task = props => {
         return (
             <div className='task'>
                 <h3 className="task__title" >{text}</h3>
-                <em> (zrobić do {date})</em>
-                <br />
-                    -potwierdzenie wykonania <span>{finish}</span>
-                <button onClick={() => props.delete(id)}> <span className="fas fa-times"></span> <span>Delete</span> </button>
+                <p className="task__date">to {date}</p>
+                <div className="task__confirmation">
+                    <p >Confirmation</p>
+                    <span>{finish}</span>
+                </div>
+                <div className="task__btns">
+                    <button onClick={() => props.delete(id)}> <span className="fas fa-times"></span> <span>Delete</span> </button>
+                </div>
+
             </div>
         )
     }

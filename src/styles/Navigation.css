@@ -1,4 +1,4 @@
-.bottom-panel{
+.navigation{
     position: fixed;
     display: flex;
     justify-content: space-around;
@@ -11,7 +11,7 @@
     background-color: var(--blue-color)
 }
 
-.bottom-panel a{
+.navigation a{
     background-color: transparent;
     border: none;
     width: 36px;
@@ -19,7 +19,7 @@
     transition: .2s;
 }
 
-.bottom-panel .tasks{
+.navigation .tasks{
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -28,13 +28,13 @@
     height: 40px;
 }
 
-.bottom-panel .tasks span{
+.navigation .tasks span{
     height: 14px;
     width: 14px;
     border-radius: 4px;
     background-color: var(--dark-blue-color);
 }
-.bottom-panel .add-task{
+.navigation .add-task{
     position: relative;
     background-color: var(--dark-blue-color);
     border-radius: 10px;
@@ -52,13 +52,13 @@
 .add-task span:nth-of-type(2){
     transform: translate(-50%,-50%) rotate(90deg);
 }
-.bottom-panel .done-tasks{
+.navigation .done-tasks{
     position: relative;
     background-color: var(--dark-blue-color);
     border-radius: 50%;
 }
 
-.bottom-panel .done-tasks::after{
+.navigation .done-tasks::after{
     content: '';
     position: absolute;
     right: -5px;
@@ -71,11 +71,23 @@
     border-radius: 0 150% 0 8px;
 }
 
-.bottom-panel .tasks.active{
+.navigation .tasks.active{
     background-color: transparent
 }
-.bottom-panel .active, 
-.bottom-panel .active::after, 
-.bottom-panel .tasks.active span {
+.navigation .active, 
+.navigation .active::after, 
+.navigation .tasks.active span {
     background-color: #fff;
 }
+@media(min-width: 768px){
+    .navigation{
+      top: 0;
+      width: 70px;
+      height: auto;
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+    .navigation a{
+        margin: 80px 0;
+    }
+  }
