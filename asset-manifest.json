@@ -1,23 +1,25 @@
 {
   "files": {
-    "main.css": "/to-do-app/static/css/main.ec3b2850.chunk.css",
-    "main.js": "/to-do-app/static/js/main.b9a1cd9d.chunk.js",
-    "main.js.map": "/to-do-app/static/js/main.b9a1cd9d.chunk.js.map",
-    "runtime-main.js": "/to-do-app/static/js/runtime-main.288263d4.js",
-    "runtime-main.js.map": "/to-do-app/static/js/runtime-main.288263d4.js.map",
-    "static/js/2.324830f4.chunk.js": "/to-do-app/static/js/2.324830f4.chunk.js",
-    "static/js/2.324830f4.chunk.js.map": "/to-do-app/static/js/2.324830f4.chunk.js.map",
-    "static/js/3.9ea7cb65.chunk.js": "/to-do-app/static/js/3.9ea7cb65.chunk.js",
-    "static/js/3.9ea7cb65.chunk.js.map": "/to-do-app/static/js/3.9ea7cb65.chunk.js.map",
+    "main.css": "/to-do-app/static/css/main.15bdc8a9.chunk.css",
+    "main.js": "/to-do-app/static/js/main.49b78b8d.chunk.js",
+    "main.js.map": "/to-do-app/static/js/main.49b78b8d.chunk.js.map",
+    "runtime-main.js": "/to-do-app/static/js/runtime-main.6263f6e3.js",
+    "runtime-main.js.map": "/to-do-app/static/js/runtime-main.6263f6e3.js.map",
+    "static/js/2.a6cc20f2.chunk.js": "/to-do-app/static/js/2.a6cc20f2.chunk.js",
+    "static/js/2.a6cc20f2.chunk.js.map": "/to-do-app/static/js/2.a6cc20f2.chunk.js.map",
+    "static/js/3.5c506d08.chunk.js": "/to-do-app/static/js/3.5c506d08.chunk.js",
+    "static/js/3.5c506d08.chunk.js.map": "/to-do-app/static/js/3.5c506d08.chunk.js.map",
     "index.html": "/to-do-app/index.html",
-    "static/css/main.ec3b2850.chunk.css.map": "/to-do-app/static/css/main.ec3b2850.chunk.css.map",
-    "static/js/2.324830f4.chunk.js.LICENSE.txt": "/to-do-app/static/js/2.324830f4.chunk.js.LICENSE.txt",
-    "static/media/calendar.c3927202.svg": "/to-do-app/static/media/calendar.c3927202.svg"
+    "static/css/main.15bdc8a9.chunk.css.map": "/to-do-app/static/css/main.15bdc8a9.chunk.css.map",
+    "static/js/2.a6cc20f2.chunk.js.LICENSE.txt": "/to-do-app/static/js/2.a6cc20f2.chunk.js.LICENSE.txt",
+    "static/media/calendar.c3927202.svg": "/to-do-app/static/media/calendar.c3927202.svg",
+    "static/media/error.4861ae77.svg": "/to-do-app/static/media/error.4861ae77.svg",
+    "static/media/to_do.757033f4.svg": "/to-do-app/static/media/to_do.757033f4.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.288263d4.js",
-    "static/js/2.324830f4.chunk.js",
-    "static/css/main.ec3b2850.chunk.css",
-    "static/js/main.b9a1cd9d.chunk.js"
+    "static/js/runtime-main.6263f6e3.js",
+    "static/js/2.a6cc20f2.chunk.js",
+    "static/css/main.15bdc8a9.chunk.css",
+    "static/js/main.49b78b8d.chunk.js"
   ]
 }
