@@ -15,7 +15,7 @@ const DoneTasks = (props) => {
             </p>
             <span className="priority__counter">{done.length} tasks done</span>
             <div className="active-tasks__container">
-                {done.length > 0 ? done : <p>0 priority tasks. Add a few</p>}
+                {done.length > 0 ? done : null}
             </div>
         </div>
     );

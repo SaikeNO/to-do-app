@@ -12,7 +12,7 @@ import { Switch, Route } from 'react-router-dom';
 
 
 import '../styles/App.css';
-import calendar from '../calendar.svg'
+import calendar from '../img/calendar.svg'
 
 const App = () => {
   const [tasks, setTasks] = useState([

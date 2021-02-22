@@ -4,6 +4,22 @@
     margin: 0 auto;
 }
 
+.error{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20%;
+}
+
+.error img{
+    width: 100%;
+    margin-bottom: 10%;
+}
+.error button{
+    margin-top: 10%;
+    font-size: 14px;
+}
 @media(min-width: 768px){
     .App{
         padding: 20px 20px 20px 100px;

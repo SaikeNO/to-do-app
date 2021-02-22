@@ -1,5 +1,6 @@
 .active-tasks, .done-tasks{
     padding: 20px 0;
+    animation: transitionOpacity .7s both;
 }
 .priotity{
     margin-bottom: 20px;

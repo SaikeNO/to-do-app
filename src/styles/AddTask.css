@@ -6,7 +6,7 @@
     text-align: center;
     margin-top: 30px;
     max-width: 600px;
-    height: calc(100vh - 218px);
+    animation: transitionOpacity .7s both;
 }
 
 
@@ -26,7 +26,7 @@ label[for='add']{
 label[for=date]{
     margin-right: 20px;
 }
-.form button {
+.form button, .welcome-panel button, .error button{
     padding: 10px 30px;
     text-transform: uppercase;
     background-color: var(--blue-color);
@@ -34,4 +34,5 @@ label[for=date]{
     border: none;
     border-radius: 20px;
     font-size: 20px;
+    cursor: pointer;
 }
