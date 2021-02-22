@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/to-do-app/static/css/main.15bdc8a9.chunk.css",
-    "main.js": "/to-do-app/static/js/main.49b78b8d.chunk.js",
-    "main.js.map": "/to-do-app/static/js/main.49b78b8d.chunk.js.map",
+    "main.css": "/to-do-app/static/css/main.2b3fecf8.chunk.css",
+    "main.js": "/to-do-app/static/js/main.9a009580.chunk.js",
+    "main.js.map": "/to-do-app/static/js/main.9a009580.chunk.js.map",
     "runtime-main.js": "/to-do-app/static/js/runtime-main.6263f6e3.js",
     "runtime-main.js.map": "/to-do-app/static/js/runtime-main.6263f6e3.js.map",
     "static/js/2.a6cc20f2.chunk.js": "/to-do-app/static/js/2.a6cc20f2.chunk.js",
@@ -10,7 +10,7 @@
     "static/js/3.5c506d08.chunk.js": "/to-do-app/static/js/3.5c506d08.chunk.js",
     "static/js/3.5c506d08.chunk.js.map": "/to-do-app/static/js/3.5c506d08.chunk.js.map",
     "index.html": "/to-do-app/index.html",
-    "static/css/main.15bdc8a9.chunk.css.map": "/to-do-app/static/css/main.15bdc8a9.chunk.css.map",
+    "static/css/main.2b3fecf8.chunk.css.map": "/to-do-app/static/css/main.2b3fecf8.chunk.css.map",
     "static/js/2.a6cc20f2.chunk.js.LICENSE.txt": "/to-do-app/static/js/2.a6cc20f2.chunk.js.LICENSE.txt",
     "static/media/calendar.c3927202.svg": "/to-do-app/static/media/calendar.c3927202.svg",
     "static/media/error.4861ae77.svg": "/to-do-app/static/media/error.4861ae77.svg",
@@ -19,7 +19,7 @@
   "entrypoints": [
     "static/js/runtime-main.6263f6e3.js",
     "static/js/2.a6cc20f2.chunk.js",
-    "static/css/main.15bdc8a9.chunk.css",
-    "static/js/main.49b78b8d.chunk.js"
+    "static/css/main.2b3fecf8.chunk.css",
+    "static/js/main.9a009580.chunk.js"
   ]
 }
