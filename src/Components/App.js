@@ -93,7 +93,7 @@ const App = () => {
   return (
     <div className="App">
       <Header calendar={calendar} tasks={tasks} />
-      <Router>
+      <Router basename={process.env.PUBLIC_URL}>
         <Switch>
           <Route path={'/'} exact component={Welcome} />
           <Route path={'/tasks'} render={() => <TaskList tasks={tasks} delete={deleteTask} change={changeTaskStatus} />} />
