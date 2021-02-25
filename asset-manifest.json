@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/to-do-app/static/css/main.2b3fecf8.chunk.css",
-    "main.js": "/to-do-app/static/js/main.9a009580.chunk.js",
-    "main.js.map": "/to-do-app/static/js/main.9a009580.chunk.js.map",
-    "runtime-main.js": "/to-do-app/static/js/runtime-main.6263f6e3.js",
-    "runtime-main.js.map": "/to-do-app/static/js/runtime-main.6263f6e3.js.map",
-    "static/js/2.a6cc20f2.chunk.js": "/to-do-app/static/js/2.a6cc20f2.chunk.js",
-    "static/js/2.a6cc20f2.chunk.js.map": "/to-do-app/static/js/2.a6cc20f2.chunk.js.map",
-    "static/js/3.5c506d08.chunk.js": "/to-do-app/static/js/3.5c506d08.chunk.js",
-    "static/js/3.5c506d08.chunk.js.map": "/to-do-app/static/js/3.5c506d08.chunk.js.map",
+    "main.css": "/to-do-app/static/css/main.e7466b49.chunk.css",
+    "main.js": "/to-do-app/static/js/main.48756e08.chunk.js",
+    "main.js.map": "/to-do-app/static/js/main.48756e08.chunk.js.map",
+    "runtime-main.js": "/to-do-app/static/js/runtime-main.5139c1f3.js",
+    "runtime-main.js.map": "/to-do-app/static/js/runtime-main.5139c1f3.js.map",
+    "static/js/2.ff31de6f.chunk.js": "/to-do-app/static/js/2.ff31de6f.chunk.js",
+    "static/js/2.ff31de6f.chunk.js.map": "/to-do-app/static/js/2.ff31de6f.chunk.js.map",
+    "static/js/3.f5ec697d.chunk.js": "/to-do-app/static/js/3.f5ec697d.chunk.js",
+    "static/js/3.f5ec697d.chunk.js.map": "/to-do-app/static/js/3.f5ec697d.chunk.js.map",
     "index.html": "/to-do-app/index.html",
-    "static/css/main.2b3fecf8.chunk.css.map": "/to-do-app/static/css/main.2b3fecf8.chunk.css.map",
-    "static/js/2.a6cc20f2.chunk.js.LICENSE.txt": "/to-do-app/static/js/2.a6cc20f2.chunk.js.LICENSE.txt",
+    "static/css/main.e7466b49.chunk.css.map": "/to-do-app/static/css/main.e7466b49.chunk.css.map",
+    "static/js/2.ff31de6f.chunk.js.LICENSE.txt": "/to-do-app/static/js/2.ff31de6f.chunk.js.LICENSE.txt",
     "static/media/calendar.c3927202.svg": "/to-do-app/static/media/calendar.c3927202.svg",
     "static/media/error.4861ae77.svg": "/to-do-app/static/media/error.4861ae77.svg",
     "static/media/to_do.757033f4.svg": "/to-do-app/static/media/to_do.757033f4.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.6263f6e3.js",
-    "static/js/2.a6cc20f2.chunk.js",
-    "static/css/main.2b3fecf8.chunk.css",
-    "static/js/main.9a009580.chunk.js"
+    "static/js/runtime-main.5139c1f3.js",
+    "static/js/2.ff31de6f.chunk.js",
+    "static/css/main.e7466b49.chunk.css",
+    "static/js/main.48756e08.chunk.js"
   ]
 }
