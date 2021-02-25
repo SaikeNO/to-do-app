@@ -1,12 +1,14 @@
 import "./Task.css";
 const Task = (props) => {
-  const { text, date, id, isActive, finishDate } = props.task;
+  let { text, deadLine, id, isActive, finishDate } = props.task;
+  console.log(deadLine);
+  deadLine = deadLine.toLocaleString().slice(0, 10);
 
   if (isActive) {
     return (
       <div className="task">
         <h3 className="task__title">{text}</h3>
-        <p className="task__date">{date} </p>
+        <p className="task__date">{deadLine} </p>
         <div className="task__btns">
           <button onClick={() => props.change(id)}>
             {" "}
@@ -24,7 +26,7 @@ const Task = (props) => {
     return (
       <div className="task">
         <h3 className="task__title">{text}</h3>
-        <p className="task__date">to {date}</p>
+        <p className="task__date">to {deadLine}</p>
         <div className="task__confirmation">
           <p>Confirmation</p>
           <span>{finish}</span>

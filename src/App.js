@@ -19,7 +19,7 @@ const App = () => {
     {
       id: uuid(),
       text: "zagrać w Wiedźmina",
-      date: "2021-02-15",
+      deadLine: new Date(2021, 1, 15), //"2021-02-15",
       isImportant: true,
       isActive: true,
       finishDate: null,
@@ -27,7 +27,7 @@ const App = () => {
     {
       id: uuid(),
       text: "zrobic dobry uczynek",
-      date: "2021-06-15",
+      deadLine: new Date(2021, 5, 15), //"2021-06-15",
       isImportant: false,
       isActive: true,
       finishDate: null,
@@ -35,7 +35,7 @@ const App = () => {
     {
       id: uuid(),
       text: "Kupic mleko",
-      date: "2021-01-25",
+      deadLine: new Date(2021, 0, 25), //"2021-01-25",
       isImportant: true,
       isActive: true,
       finishDate: null,
@@ -43,7 +43,7 @@ const App = () => {
     {
       id: uuid(),
       text: "umyć samochód",
-      date: "2021-02-24",
+      deadLine: new Date(2021, 1, 24), //"2021-02-24",
       isImportant: true,
       isActive: true,
       finishDate: null,
@@ -68,11 +68,11 @@ const App = () => {
     setTasks(tasksList);
   };
 
-  const addTask = (text, date, isImportant) => {
+  const addTask = (text, deadLine, isImportant) => {
     const task = {
       id: uuid(),
       text,
-      date,
+      deadLine,
       isImportant,
       isActive: true,
       finishDate: null,

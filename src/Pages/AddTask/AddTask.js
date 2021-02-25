@@ -2,35 +2,37 @@ import React, { useState } from "react";
 import "./AddTask.css";
 
 const AddTask = (props) => {
-  const minDate = new Date().toISOString().slice(0, 10);
+  const minDate = new Date();
 
   const [text, setText] = useState("");
-  const [priorityChecked, setPriorityCheked] = useState(false);
-  const [date, setDate] = useState(minDate);
+  const [isPriorityChecked, setIsPriorityCheked] = useState(false);
+  const [deadLine, setDeadline] = useState(minDate);
 
   const handleText = (e) => {
     setText(e.target.value);
   };
 
   const handleCheckbox = (e) => {
-    setPriorityCheked(e.target.checked);
+    setIsPriorityCheked(e.target.checked);
   };
 
   const handleDate = (e) => {
-    setDate(e.target.value);
+    const deadLine = new Date(e.target.value);
+    console.log(deadLine);
+    setDeadline(deadLine);
   };
 
   const handleClick = () => {
     if (text.length < 2) return;
-    const add = props.add(text, date, priorityChecked);
+    const add = props.add(text, deadLine, isPriorityChecked);
     if (add) {
       setText("");
-      setPriorityCheked(false);
-      setDate(minDate);
+      setIsPriorityCheked(false);
+      setDeadline(minDate);
     }
   };
-  let maxDate = minDate.slice(0, 4) * 1 + 1;
-  maxDate = `${maxDate}-12-31`;
+  let maxDate = new Date(minDate).getFullYear();
+  maxDate = `${maxDate + 1}-12-31`;
   return (
     <div className="form">
       <label htmlFor="add">Add task</label>
@@ -44,7 +46,7 @@ const AddTask = (props) => {
       <div className="priority-checkbox">
         <input
           type="checkbox"
-          checked={priorityChecked}
+          checked={isPriorityChecked}
           id="important"
           onChange={handleCheckbox}
         />
@@ -55,8 +57,8 @@ const AddTask = (props) => {
         <input
           type="date"
           id="date"
-          value={date}
-          min={minDate}
+          value={deadLine.toISOString().slice(0, 10)}
+          min={minDate.toISOString().slice(0, 10)}
           max={maxDate}
           onChange={handleDate}
         />

@@ -5,12 +5,11 @@ const TaskList = (props) => {
   const tasks = props.tasks.filter((task) => task.isActive);
   const priorityTasks = tasks.filter((task) => task.isImportant);
   const notPriorityTasks = tasks.filter((task) => !task.isImportant);
-
   // SORT BY DATE
   if (tasks.length >= 2) {
     tasks.sort((a, b) => {
-      a = a.date;
-      b = b.date;
+      a = a.deadLine;
+      b = b.deadLine;
 
       if (a < b) return -1;
       if (a > b) return 1;
