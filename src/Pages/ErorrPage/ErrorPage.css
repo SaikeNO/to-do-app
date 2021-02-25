@@ -1,0 +1,27 @@
+.error {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 20%;
+}
+
+.error img {
+  width: 100%;
+  margin-bottom: 10%;
+}
+.error button {
+  margin-top: 10%;
+  font-size: 14px;
+}
+@media (min-width: 768px) {
+  .error img {
+    width: 550px;
+  }
+  .error {
+    padding-top: 2%;
+  }
+  .error button {
+    font-size: 20px;
+  }
+}
