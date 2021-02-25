@@ -6,29 +6,17 @@ const TaskList = (props) => {
   const priorityTasks = activeTasks.filter((task) => task.isImportant);
   const notPriorityTasks = activeTasks.filter((task) => !task.isImportant);
   // SORT BY DATE
-  // if (tasks.length >= 2) {
-  //   tasks.sort((a, b) => {
-  //     a = a.deadLine;
-  //     b = b.deadLine;
+  if (priorityTasks.length >= 2) {
+    priorityTasks.sort((a, b) => {
+      a = a.deadLine;
+      b = b.deadLine;
 
-  //     if (a < b) return -1;
-  //     if (a > b) return 1;
-  //     return 0;
-  //   });
-  // }
+      if (a < b) return -1;
+      if (a > b) return 1;
+      return 0;
+    });
+  }
 
-  // SORT BY FIRST LETTER
-  // if(active.length >= 2) {
-  //     active.sort((a,b) => {
-  //         a = a.text.toLowerCase()
-  //         b = b.text.toLowerCase()
-
-  //         if(a < b) return -1;
-  //         if(a > b) return 1;
-  //         return 0
-
-  //     })
-  // }
   const activePriorityTasks = priorityTasks.map((task) => (
     <ActiveTask
       key={task.id}

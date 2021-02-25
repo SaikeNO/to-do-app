@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { addYears, endOfYear } from "date-fns";
 import "./AddTask.css";
 
 const AddTask = (props) => {
@@ -30,8 +31,7 @@ const AddTask = (props) => {
       setDeadline(minDate);
     }
   };
-  let maxDate = new Date(minDate).getFullYear();
-  maxDate = `${maxDate + 1}-12-31`;
+  const maxDate = endOfYear(addYears(minDate, 1));
   return (
     <div className="form">
       <label htmlFor="add">Add task</label>
@@ -58,7 +58,7 @@ const AddTask = (props) => {
           id="date"
           value={deadLine.toISOString().slice(0, 10)}
           min={minDate.toISOString().slice(0, 10)}
-          max={maxDate}
+          max={maxDate.toISOString().slice(0, 10)}
           onChange={handleDate}
         />
       </div>
