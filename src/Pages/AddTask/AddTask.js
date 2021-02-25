@@ -18,7 +18,6 @@ const AddTask = (props) => {
 
   const handleDate = (e) => {
     const deadLine = new Date(e.target.value);
-    console.log(deadLine);
     setDeadline(deadLine);
   };
 

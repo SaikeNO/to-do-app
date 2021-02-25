@@ -11,49 +11,17 @@ import { BrowserRouter as Router } from "react-router-dom";
 import { Switch, Route } from "react-router-dom";
 import uuid from "react-uuid";
 
+import initialTasks from "./data/initialTasks";
+
 import "./styles/App.css";
 import calendar from "./img/calendar.svg";
 
 const App = () => {
-  const [tasks, setTasks] = useState([
-    {
-      id: uuid(),
-      text: "zagrać w Wiedźmina",
-      deadLine: new Date(2021, 1, 15), //"2021-02-15",
-      isImportant: true,
-      isActive: true,
-      finishDate: null,
-    },
-    {
-      id: uuid(),
-      text: "zrobic dobry uczynek",
-      deadLine: new Date(2021, 5, 15), //"2021-06-15",
-      isImportant: false,
-      isActive: true,
-      finishDate: null,
-    },
-    {
-      id: uuid(),
-      text: "Kupic mleko",
-      deadLine: new Date(2021, 0, 25), //"2021-01-25",
-      isImportant: true,
-      isActive: true,
-      finishDate: null,
-    },
-    {
-      id: uuid(),
-      text: "umyć samochód",
-      deadLine: new Date(2021, 1, 24), //"2021-02-24",
-      isImportant: true,
-      isActive: true,
-      finishDate: null,
-    },
-  ]);
+  const [tasks, setTasks] = useState(initialTasks);
 
   const deleteTask = (id) => {
-    const tasksList = [...tasks];
-    const index = tasksList.findIndex((task) => task.id === id);
-    tasksList.splice(index, 1);
+    let tasksList = [...tasks];
+    tasksList = tasksList.filter((task) => task.id !== id);
     setTasks(tasksList);
   };
 
@@ -85,10 +53,11 @@ const App = () => {
   };
 
   const doneTasks = tasks.filter((task) => !task.isActive);
+  const activeTasks = tasks.filter((task) => task.isActive);
 
   return (
     <div className="App">
-      <Header calendar={calendar} tasks={tasks} />
+      <Header calendar={calendar} totalActiveTasks={activeTasks} />
       <Router basename={process.env.PUBLIC_URL}>
         <Switch>
           <Route path={"/"} exact component={Welcome} />
@@ -96,7 +65,7 @@ const App = () => {
             path={"/tasks"}
             render={() => (
               <TaskList
-                tasks={tasks}
+                activeTasks={activeTasks}
                 delete={deleteTask}
                 change={changeTaskStatus}
               />

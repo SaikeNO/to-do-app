@@ -1,21 +1,21 @@
-import Task from "../../Components/Task/Task";
+import ActiveTask from "../../Components/Task/ActiveTask";
 import "./TaskList.css";
 
 const TaskList = (props) => {
-  const tasks = props.tasks.filter((task) => task.isActive);
-  const priorityTasks = tasks.filter((task) => task.isImportant);
-  const notPriorityTasks = tasks.filter((task) => !task.isImportant);
+  const { activeTasks } = props;
+  const priorityTasks = activeTasks.filter((task) => task.isImportant);
+  const notPriorityTasks = activeTasks.filter((task) => !task.isImportant);
   // SORT BY DATE
-  if (tasks.length >= 2) {
-    tasks.sort((a, b) => {
-      a = a.deadLine;
-      b = b.deadLine;
+  // if (tasks.length >= 2) {
+  //   tasks.sort((a, b) => {
+  //     a = a.deadLine;
+  //     b = b.deadLine;
 
-      if (a < b) return -1;
-      if (a > b) return 1;
-      return 0;
-    });
-  }
+  //     if (a < b) return -1;
+  //     if (a > b) return 1;
+  //     return 0;
+  //   });
+  // }
 
   // SORT BY FIRST LETTER
   // if(active.length >= 2) {
@@ -29,9 +29,8 @@ const TaskList = (props) => {
 
   //     })
   // }
-
   const activePriorityTasks = priorityTasks.map((task) => (
-    <Task
+    <ActiveTask
       key={task.id}
       task={task}
       delete={props.delete}
@@ -39,7 +38,7 @@ const TaskList = (props) => {
     />
   ));
   const activeNotPriorityTasks = notPriorityTasks.map((task) => (
-    <Task
+    <ActiveTask
       key={task.id}
       task={task}
       delete={props.delete}

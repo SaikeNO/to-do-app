@@ -1,11 +1,11 @@
 import React from "react";
-import Task from "../../Components/Task/Task";
+import InactiveTask from "../../Components/Task/InactiveTask";
 
 const DoneTasks = (props) => {
   const { doneTasks } = props;
 
   const done = doneTasks.map((task) => (
-    <Task key={task.id} task={task} delete={props.delete} />
+    <InactiveTask key={task.id} task={task} delete={props.delete} />
   ));
 
   return (
